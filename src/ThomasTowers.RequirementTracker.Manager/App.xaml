@@ -1,0 +1,12 @@
+﻿<Application x:Class="ThomasTowers.RequirementTracker.Manager.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ThomasTowers.RequirementTracker.Manager"
+             Startup="Application_Startup" Exit="Application_Exit">
+    <Application.Resources>
+        <ResourceDictionary>
+            <local:ViewModelLocator x:Key="Locator" />
+            <!-- Application styles definition -->
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
