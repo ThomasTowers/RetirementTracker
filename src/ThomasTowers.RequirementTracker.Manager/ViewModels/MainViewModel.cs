@@ -1,9 +1,10 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
 
-namespace ThomasTowers.RequirementTracker.Manager.ViewModels
+namespace ThomasTowers.RetirementTracker.Manager.ViewModels
 {
     internal class MainViewModel : ObservableRecipient
     {
-        public string MyProperty { get; set; }
+        public ObservableCollection<AccountViewModel> Accounts { get; } = new ObservableCollection<AccountViewModel>();
     }
 }

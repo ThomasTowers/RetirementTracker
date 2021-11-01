@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ThomasTowers.RetirementTracker.Manager
+namespace ThomasTowers.RetirementTracker.Manager.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainStatusBar.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainStatusBar : UserControl
     {
-        public MainWindow()
+        public MainStatusBar()
         {
             InitializeComponent();
         }

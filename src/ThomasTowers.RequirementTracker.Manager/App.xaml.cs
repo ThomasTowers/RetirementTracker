@@ -1,24 +1,18 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
-using ThomasTowers.RequirementTracker.Manager.ViewModels;
+using ThomasTowers.RetirementTracker.Manager.ViewModels;
 
-namespace ThomasTowers.RequirementTracker.Manager
+namespace ThomasTowers.RetirementTracker.Manager
 {
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
-        private IHost _host;
+        private readonly IHost _host;
 
-        internal static IServiceProvider ServiceProvider { get; private set; }
+        internal static IServiceProvider ServiceProvider { get; private set; } = null!;
 
         public App()
         {
@@ -26,6 +20,8 @@ namespace ThomasTowers.RequirementTracker.Manager
                 .ConfigureServices((context, services) =>
                 {
                     services.AddSingleton<MainViewModel>();
+                    services.AddSingleton<MainMenuViewModel>();
+                    services.AddSingleton<MainStatusBarViewModel>();
                     services.AddSingleton<MainWindow>();
                 })
                 .Build();
@@ -38,7 +34,7 @@ namespace ThomasTowers.RequirementTracker.Manager
             await _host.StartAsync();
 
             var mainWindow = _host.Services.GetRequiredService<MainWindow>();
-            mainWindow.Show(); 
+            mainWindow.Show();
         }
 
         private async void Application_Exit(object sender, ExitEventArgs e)
